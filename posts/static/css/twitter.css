@@ -1,0 +1,255 @@
+html, body {
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #E1E8ED; }
+
+button {
+  cursor: pointer; }
+  button:disabled {
+    cursor: not-allowed;
+    background-color: rgba(192, 192, 192, 0.3); }
+
+.nav {
+  background-color: #FFF;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  width: 100%;
+  overflow: hidden;
+  margin: 0 0 10px 0;
+  top: 0;
+  position: fixed; }
+  .nav .nav-link-container {
+    background-color: transparent;
+    max-width: 1190px;
+    width: 90%;
+    min-width: 500px;
+    margin: 0 auto;
+    font-size: 0.9em; }
+  .nav a {
+    margin: 0;
+    padding: 16px 20px;
+    float: left;
+    color: #657786;
+    font-size: 0.85em;
+    font-weight: 600;
+    text-decoration: none; }
+    .nav a:hover {
+      color: #0084B4; }
+
+.container {
+  background-color: transparent;
+  max-width: 1190px;
+  width: 94%;
+  min-width: 500px;
+  margin: 55px auto 20px auto;
+  font-size: 0.9em; }
+
+.left {
+  background-color: transparent;
+  width: 24%;
+  margin: 0 1% 0 0;
+  padding: 0;
+  float: left; }
+  .left .profilecard {
+    background-color: #FFF;
+    width: 100%;
+    height: 216px;
+    margin: 0;
+    padding: 0; }
+    .left .profilecard .header {
+      background-color: #14171A;
+      width: 100%;
+      height: 100px; }
+    .left .profilecard .userpic {
+      background-color: #0084B4;
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      margin-top: -32px;
+      margin-left: 10px;
+      margin-right: 10px;
+      float: left; }
+    .left .profilecard .name-username-div {
+      margin: 0;
+      padding: 3px;
+      display: inline-block; }
+      .left .profilecard .name-username-div .name {
+        flex: 1;
+        color: #14171A;
+        text-decoration: none;
+        font-size: 1.7em; }
+        .left .profilecard .name-username-div .name:hover {
+          text-decoration: underline; }
+      .left .profilecard .name-username-div .username {
+        flex: 1;
+        color: #657786;
+        text-decoration: none;
+        font-size: 1em; }
+        .left .profilecard .name-username-div .username:hover {
+          text-decoration: underline; }
+    .left .profilecard .stats {
+      width: 90%;
+      margin: 18px auto 0 auto;
+      padding: 0;
+      display: flex; }
+      .left .profilecard .stats .num-of-tweets, .left .profilecard .stats .num-of-following, .left .profilecard .stats .num-of-followers {
+        width: 33%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center; }
+        .left .profilecard .stats .num-of-tweets span, .left .profilecard .stats .num-of-following span, .left .profilecard .stats .num-of-followers span {
+          font-size: 0.9em;
+          font-weight: 600;
+          color: #657786; }
+        .left .profilecard .stats .num-of-tweets .numbers, .left .profilecard .stats .num-of-following .numbers, .left .profilecard .stats .num-of-followers .numbers {
+          font-size: 1.3em;
+          font-weight: 600;
+          color: #00ACED; }
+
+.userfeed {
+  background-color: #FFF;
+  width: 50%;
+  margin: 0;
+  float: left; }
+  .userfeed .new-tweet-field {
+    background-color: #1DCAFF;
+    padding: 10px 30px;
+    overflow: auto; }
+    .userfeed .new-tweet-field textarea {
+      font-family: "Helvetica Neue", sans-serif;
+      font-size: 1em;
+      border-radius: 5px;
+      height: 1.2em;
+      width: calc(100% - 20px);
+      margin: 0 auto;
+      padding: 8px;
+      transition: all 0.5s ease; }
+      .userfeed .new-tweet-field textarea:focus {
+        height: 4em;
+        border: 1px solid #0084B4; }
+        .userfeed .new-tweet-field textarea:focus::placeholder {
+          color: #657786; }
+      .userfeed .new-tweet-field textarea::placeholder {
+        color: #00ACED; }
+    .userfeed .new-tweet-field button[type=submit] {
+      display: none;
+      margin-top: 15px;
+      background-color: #0084B4;
+      color: #FFF;
+      font-size: 0.9em;
+      font-weight: bold;
+      border-radius: 20px;
+      padding: 10px 20px;
+      outline: none !important;
+      border: none;
+      float: right; }
+      .userfeed .new-tweet-field button[type=submit]:disabled {
+        cursor: not-allowed;
+        background-color: #657786; }
+  .userfeed .tweet-wrapper {
+    border-bottom: 1px solid #E1E8ED;
+    padding: 13px 10px 10px 10px;
+    margin: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    min-height: 65px;
+    cursor: pointer; }
+    .userfeed .tweet-wrapper:hover {
+      background-color: #F5F8FA; }
+    .userfeed .tweet-wrapper .poster-pic-wrapper {
+      float: left;
+      width: 45px; }
+      .userfeed .tweet-wrapper .poster-pic-wrapper .poster-pic {
+        background-color: #657786;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%; }
+    .userfeed .tweet-wrapper .post-info {
+      font-size: 1em;
+      float: left;
+      width: calc(100% - 80px);
+      margin-left: 10px; }
+      .userfeed .tweet-wrapper .post-info .poster-name {
+        color: #14171A;
+        font-weight: bold;
+        float: left;
+        margin: 0 2px; }
+      .userfeed .tweet-wrapper .post-info .poster-username, .userfeed .tweet-wrapper .post-info .time-posted {
+        color: #657786;
+        float: left;
+        margin: 0 2px; }
+      .userfeed .tweet-wrapper .post-info .post-content {
+        width: 100%;
+        overflow: hidden;
+        color: #14171A;
+        overflow-wrap: break-word;
+        line-height: 1.5em; }
+    .userfeed .tweet-wrapper .post-settings {
+      width: 100%;
+      clear: right;
+      text-align: center;
+      font-size: 1.5em; }
+    .userfeed .tweet-wrapper .post-options {
+      float: right;
+      width: calc(100% - 55px); }
+      .userfeed .tweet-wrapper .post-options button {
+        outline: none;
+        border: none;
+        background-color: transparent;
+        margin: 10px 30px 0 0;
+        cursor: pointer; }
+      .userfeed .tweet-wrapper .post-options .reply div {
+        float: left;
+        width: 18px;
+        height: 18px;
+        background-image: url("../images/reply.png");
+        background-size: cover; }
+      .userfeed .tweet-wrapper .post-options .reply span {
+        display: inline-block;
+        margin: 3px 0 0 5px;
+        font-size: 0.9em;
+        color: #657786; }
+      .userfeed .tweet-wrapper .post-options .reply:hover span {
+        color: #00ACED; }
+      .userfeed .tweet-wrapper .post-options .reply:hover div {
+        background-image: url("../images/hover-reply.png"); }
+      .userfeed .tweet-wrapper .post-options .retweet div {
+        float: left;
+        width: 18px;
+        height: 18px;
+        background-image: url("../images/retweet.png");
+        background-size: cover; }
+      .userfeed .tweet-wrapper .post-options .retweet span {
+        display: inline-block;
+        margin: 3px 0 0 5px;
+        font-size: 0.9em;
+        color: #657786; }
+      .userfeed .tweet-wrapper .post-options .retweet:hover span {
+        color: #91DC5A; }
+      .userfeed .tweet-wrapper .post-options .retweet:hover div {
+        background-image: url("../images/retweeted.png"); }
+      .userfeed .tweet-wrapper .post-options .favorite div {
+        float: left;
+        width: 18px;
+        height: 18px;
+        background-image: url("../images/favorite.png");
+        background-size: cover; }
+      .userfeed .tweet-wrapper .post-options .favorite span {
+        display: inline-block;
+        margin: 3px 0 0 5px;
+        font-size: 0.9em;
+        color: #657786; }
+      .userfeed .tweet-wrapper .post-options .favorite:hover span {
+        color: #FAC917; }
+      .userfeed .tweet-wrapper .post-options .favorite:hover div {
+        background-image: url("../images/favorited.png"); }
+
+.right {
+  background-color: #FFF;
+  width: 24%;
+  margin: 0 0 0 1%;
+  float: right;
+  height: 300px; }
+
+/*# sourceMappingURL=twitter.css.map */

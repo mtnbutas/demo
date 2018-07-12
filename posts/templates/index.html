@@ -1,0 +1,46 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Demo</title>
+	<link rel="stylesheet" href="{% static "css/bulma.min.css" %}">
+    <link rel="stylesheet" href="{% static "css/main.css" %}">
+</head>
+<body>
+	<div class="container" id="app">
+        <h1 class="title">My posts</h1>
+        <post-list inline-template>
+            <div v-cloak class="columns control">
+                <div class="column" v-for="post in posts" :key="post.pk">
+                    <post v-bind:post="post"></post>
+                </div>
+            </div>
+	    </post-list>
+
+        <h1 class="title">Add a Post</h1>
+        <form v-on:submit.prevent="addPost" @keydown="form.errors.clear($event.target.name)">
+            <div class="field">
+              <label for="title" class="label">Title</label>
+              <div class="control">
+                  <input class="input" id="title" name="title" placeholder="Enter post title" v-model="form.title">
+                  <span v-cloak class="help is-danger" v-if="form.errors.has('title')" v-text="form.errors.get('title')"></span>
+              </div>
+            </div>
+            <div class="field">
+              <label for="content" class="label">Content</label>
+              <div class="control">
+                  <input class="input" name="content" id="content" placeholder="Enter content" v-model="form.content">
+                  <span v-cloak class="help is-danger" v-if="form.errors.has('content')" v-text="form.errors.get('content')"></span>
+              </div>
+            </div>
+            <div class="control">
+                <button class="button is-primary" v-bind:disabled="form.errors.any()">Submit</button>
+            </div>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script src="{% static "js/vue_app.js" %}"></script>
+</body>
+</html>

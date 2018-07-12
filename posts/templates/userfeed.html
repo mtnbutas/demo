@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>BRUH</title>
+
+	<link href="{% static 'css/twitter.css' %}" rel="stylesheet">
+
+</head>
+<body>
+	<div class="nav">
+		<div class="nav-link-container">
+			<a href="#">Home</a>
+			<a href="#">Notifications</a>
+		</div>
+	</div>
+
+	<div class="container" id="app">
+		<section class="left">
+			<div class="profilecard">
+				<div class="header"></div>
+				<div class="userpic"></div>
+				<div class="name-username-div">
+					<a href="#" class="name">asdfghj</a><br>
+					<a href="#" class="username">@hghghghg</a>
+				</div>
+				<div class="stats">
+					<div class="num-of-tweets">
+						<span>Tweets</span>
+						<div class="numbers">666</div>
+					</div>
+					<div class="num-of-following">
+						<span>Following</span>
+						<div class="numbers">666</div>
+					</div>
+					<div class="num-of-followers">
+						<span>Followers</span>
+						<div class="numbers">666</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<div class="userfeed">
+			<form v-on:submit.prevent="addPost" @keydown="form.errors.clear($event.target.name)">
+				<div class="new-tweet-field">
+					<textarea id="content" name="content" v-model="form.content" rows="2" placeholder="What's happening?"></textarea>
+					<button type="submit">Tweet</button>
+				</div>
+			</form>
+
+			<post-list inline-template>
+	            <div v-cloak>
+	                <div v-for="post in posts" :key="post.pk">
+	                    <post v-bind:post="post"></post>
+	                </div>
+	            </div>
+		    </post-list>
+		</div>
+		<section class="right">
+		</section>
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script src="{% static "js/vue_app.js" %}"></script>
+	<script type="text/javascript" src="{% static 'scripts/textarea-expand.js' %}"></script>
+</body>
+<!-- <footer style="clear:both;"><div>Icons made by <a href="https://www.flaticon.com/authors/hadrien" title="Hadrien">Hadrien</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+<div>Icons made by <a href="https://www.flaticon.com/authors/gregor-cresnar" title="Gregor Cresnar">Gregor Cresnar</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div></footer>
+<div>Icons made by <a href="https://www.flaticon.com/authors/maxim-basinski" title="Maxim Basinski">Maxim Basinski</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>
+<div>Icons made by <a href="https://www.flaticon.com/authors/dave-gandy" title="Dave Gandy">Dave Gandy</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div></div>
+</html> -->

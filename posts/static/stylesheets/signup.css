@@ -1,0 +1,99 @@
+html, body {
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #E1E8ED; }
+
+.login-nav {
+  background-color: #FFF;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  width: 100%;
+  overflow: hidden;
+  margin: 0 0 10px 0; }
+  .login-nav a {
+    margin: 0;
+    padding: 16px 20px;
+    float: left;
+    color: #657786;
+    font-size: 0.85em;
+    font-weight: 600;
+    text-decoration: none; }
+    .login-nav a:hover {
+      color: #0084B4; }
+
+.login-container {
+  background-color: #FFF;
+  max-width: 840px;
+  width: 85%;
+  min-width: 460px;
+  margin: 0 auto;
+  font-size: 0.9em; }
+  .login-container form {
+    min-width: 326px;
+    width: 70%;
+    padding-top: 5px;
+    margin: 15px auto;
+    color: #14171A;
+    font-size: 0.98em; }
+    .login-container form h2 {
+      color: #14171A; }
+    .login-container form input[type=text], .login-container form input[type=password] {
+      display: inline-block;
+      color: #14171A;
+      border: none;
+      border-bottom: 0.04em solid #657786;
+      border-radius: 3px;
+      padding: 8px 6px;
+      margin: 0 53% 15px 0;
+      width: 47%;
+      min-width: 200px;
+      font-size: 20px; }
+      .login-container form input[type=text]::placeholder, .login-container form input[type=text]::-ms-input-placeholder, .login-container form input[type=text]::-ms-input-placeholder, .login-container form input[type=password]::placeholder, .login-container form input[type=password]::-ms-input-placeholder, .login-container form input[type=password]::-ms-input-placeholder {
+        color: #657786; }
+      .login-container form input[type=text]:focus, .login-container form input[type=password]:focus {
+        outline: none !important;
+        border: none;
+        border-bottom: 0.04em solid #00ACED; }
+        .login-container form input[type=text]:focus::placeholder, .login-container form input[type=text]:focus::-ms-input-placeholder, .login-container form input[type=text]:focus::-ms-input-placeholder, .login-container form input[type=password]:focus::placeholder, .login-container form input[type=password]:focus::-ms-input-placeholder, .login-container form input[type=password]:focus::-ms-input-placeholder {
+          color: #F5F8FA; }
+    .login-container form button[type=submit] {
+      margin-top: 15px;
+      background-color: #00ACED;
+      color: #FFF;
+      font-size: 0.9em;
+      font-weight: bold;
+      border-radius: 20px;
+      padding: 10px 20px;
+      outline: none !important;
+      border: none; }
+    .login-container form a {
+      color: #00ACED;
+      text-decoration: none; }
+      .login-container form a:hover {
+        text-decoration: underline; }
+  .login-container .login-footer {
+    background-color: #F5F8FA;
+    color: #657786;
+    width: 100%;
+    padding: 13px 0;
+    overflow: hidden; }
+    .login-container .login-footer div {
+      line-height: 2.4em;
+      margin: 0 15%;
+      padding: 0; }
+    .login-container .login-footer a {
+      color: #00ACED;
+      text-decoration: none; }
+      .login-container .login-footer a:hover {
+        text-decoration: underline; }
+
+body {
+  margin: 0; }
+
+img {
+  margin-left: auto;
+  margin-right: auto;
+  display: block; }
+
+/*# sourceMappingURL=signup.css.map */

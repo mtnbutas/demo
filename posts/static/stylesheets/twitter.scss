@@ -1,0 +1,393 @@
+$font-stack: 'Helvetica Neue', sans-serif;
+$twitter-dark-blue: #0084B4;
+$twitter-logo-blue: #00ACED;
+$twitter-light-blue: #1DCAFF;
+$twitter-background: #E1E8ED;
+$twitter-gray: #657786;
+$twitter-light-gray: #F5F8FA;
+$twitter-black: #14171A;
+$white: #FFF;
+$retweeted: #91DC5A;
+$favorited: #FAC917;
+
+
+html, body {
+  font-family: $font-stack;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: $twitter-background;
+}
+
+button { 
+  cursor: pointer;
+  &:disabled { 
+    cursor: not-allowed;
+    background-color: rgba(192,192,192,0.3);
+  }
+}
+
+.nav {
+  background-color: $white;
+  border-bottom: 1px solid rgba(0,0,0,0.20);
+  width: 100%;
+  overflow: hidden;
+  margin: 0 0 10px 0;
+  top: 0;
+  position: fixed;
+
+  .nav-link-container {
+    background-color: transparent;
+    max-width: 1190px;
+    width: 90%;
+    min-width: 500px;
+    margin: 0 auto;
+    font-size: 0.9em;
+  }
+    
+  a {
+    margin: 0;
+    padding: 16px 20px;
+    float: left;
+    color: $twitter-gray;
+    font-size: 0.85em;
+    font-weight: 600;
+    text-decoration: none;
+    
+    &:hover {
+      color: $twitter-dark-blue;
+    }
+  }
+}
+
+.container {
+  background-color: transparent;
+  max-width: 1190px;
+  width: 94%;
+  min-width: 500px;
+  margin: 55px auto 20px auto;
+  font-size: 0.9em;
+}
+
+.left {
+  background-color: transparent;
+  width: 24%;
+  margin: 0 1% 0 0;
+  padding: 0;
+  float: left;
+
+  .profilecard {
+    background-color: $white;
+    width: 100%;
+    height: 216px;
+    margin: 0;
+    padding: 0;
+
+    .header {
+      background-color: $twitter-black;
+      width: 100%;
+      height: 100px;
+      
+      .img {
+
+      }
+    }
+
+    .userpic {
+      background-color: $twitter-dark-blue;
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      margin-top: -32px;
+      margin-left: 10px;
+      margin-right: 10px;
+      float: left;
+
+      .img {
+
+      }
+    }
+
+    .name-username-div {
+      margin: 0;
+      padding: 3px;
+      display: inline-block;
+
+      .name {
+        flex: 1;
+        color: $twitter-black;
+        text-decoration: none;
+        font-size: 1.7em;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      .username {
+        flex: 1;
+        color: $twitter-gray;
+        text-decoration: none;
+        font-size: 1em;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .stats {
+      width: 90%;
+      margin: 18px auto 0 auto;
+      padding: 0;
+      display: flex;
+
+      .num-of-tweets, .num-of-following, .num-of-followers {
+        width: 33%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center; 
+
+        span {
+          font-size: 0.9em;
+          font-weight: 600;
+          color: $twitter-gray;
+        }
+
+        .numbers {
+          font-size: 1.3em;
+          font-weight: 600;
+          color: $twitter-logo-blue;
+        }
+
+      }
+
+    }
+    
+  }
+ 
+}
+
+.userfeed {
+  background-color: $white;
+  width: 50%;
+  margin: 0;
+  float: left;
+  
+  .new-tweet-field {
+    background-color: $twitter-light-blue;
+    padding: 10px 30px;
+    overflow: auto; 
+
+    textarea {
+      font-family: $font-stack;
+      font-size: 1em;
+      border-radius: 5px;
+      height: 1.2em;
+      width: calc(100% - 20px);
+      margin: 0 auto;
+      padding: 8px;
+      transition: all 0.5s ease;
+      
+      &:focus {
+        height: 4em;
+        border: 1px solid $twitter-dark-blue;
+
+        &::placeholder {
+          color: $twitter-gray;
+        }
+      }
+
+      &::placeholder {
+        color: $twitter-logo-blue;
+      }
+    }
+
+    button[type=submit] {
+        display: none;
+        margin-top: 15px;
+        background-color: $twitter-dark-blue;
+        color: $white;
+        font-size: 0.9em;
+        font-weight: bold;
+        border-radius: 20px;
+        padding: 10px 20px;
+        outline: none !important;
+        border: none;
+        float: right;
+
+        &:disabled { 
+          cursor: not-allowed;
+          background-color: $twitter-gray;
+        }
+    }
+  }
+
+  .tweet-wrapper {
+    border-bottom: 1px solid $twitter-background;
+    padding: 13px 10px 10px 10px;
+    margin: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    min-height: 65px;
+    cursor: pointer;
+    // display: flex;
+
+    &:hover {
+      background-color: $twitter-light-gray;
+    }
+
+    .poster-pic-wrapper {
+      float: left;
+      width: 45px;
+
+      .poster-pic {
+        background-color: $twitter-gray;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        .img {
+
+        }
+      }
+    }
+    
+    .post-info {
+      font-size: 1em;
+      float: left;
+      width: calc(100% - 80px);
+      margin-left: 10px;
+
+      .poster-name {
+        color: $twitter-black;
+        font-weight: bold;
+        float: left;
+        margin: 0 2px;
+      }
+
+      .poster-username, .time-posted {
+        color: $twitter-gray;
+        float: left;
+        margin: 0 2px;
+      } 
+
+      .post-content {
+        width: 100%;
+        overflow: hidden;
+        color: $twitter-black;
+        overflow-wrap: break-word;
+        line-height: 1.5em;
+      }
+
+    }
+
+    .post-settings {
+      width: 100%;
+      clear: right;
+      text-align: center;
+      font-size: 1.5em;
+    }
+
+    .post-options {
+      float: right;
+      width: calc(100% - 55px);
+
+      button {
+        outline: none;
+        border: none;
+        background-color: transparent;
+        margin: 10px 30px 0 0;
+        cursor: pointer;
+      }
+
+      .reply {
+        div {
+          float: left;
+          width: 18px;
+          height: 18px;
+          background-image: url('../images/reply.png');
+          background-size: cover;
+        }
+
+        span {
+          display: inline-block;
+          margin: 3px 0 0 5px;
+          font-size: 0.9em;
+          color: $twitter-gray;
+        }
+
+        &:hover {
+          span{
+            color: $twitter-logo-blue;
+          }
+
+          div{
+            background-image: url('../images/hover-reply.png');
+          }
+        }
+      }
+
+      .retweet {
+        div {
+          float: left;
+          width: 18px;
+          height: 18px;
+          background-image: url('../images/retweet.png');
+          background-size: cover;
+        }
+
+        span {
+          display: inline-block;
+          margin: 3px 0 0 5px;
+          font-size: 0.9em;
+          color: $twitter-gray;
+        }
+
+        &:hover {
+          span {
+            color: $retweeted;
+          }
+          
+          div{
+            background-image: url('../images/retweeted.png');
+          }
+        }
+      }
+
+      .favorite {
+        div {
+          float: left;
+          width: 18px;
+          height: 18px;
+          background-image: url('../images/favorite.png');
+          background-size: cover;
+        }
+
+        span {
+          display: inline-block;
+          margin: 3px 0 0 5px;
+          font-size: 0.9em;
+          color: $twitter-gray;
+        }
+
+        &:hover {
+          span {
+            color: $favorited;
+          }
+
+          div{
+            background-image: url('../images/favorited.png');
+          }
+        }
+      }
+    }
+  }
+}
+
+.right {
+  background-color: $white;
+  width: 24%;
+  margin: 0 0 0 1%;
+  float: right;
+  height: 300px;
+}
